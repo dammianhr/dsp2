@@ -1,0 +1,99 @@
+@charset "UTF-8";
+/*
+ * jQuery File Upload Plugin CSS Example 8.8.2
+ * https://github.com/blueimp/jQuery-File-Upload
+ *
+ * Copyright 2013, Sebastian Tschan
+ * https://blueimp.net
+ *
+ * Licensed under the MIT license:
+ * http://www.opensource.org/licenses/MIT
+ */
+
+body {
+  background-color: #3A3A3A;
+  padding-top: 30px;
+}
+
+
+.chanel
+{
+	background: #222222;
+	border-radius: 3px;
+	width: 100%;
+	padding:10px;
+	margin-top: 16px;
+}
+
+.chanel p {
+    color: #888787;
+    text-align: center;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+
+a.interactor {
+    background-image: url('../img/buttons.png');
+    width: 125px;
+    height: 136px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+a.interactor.inactive {
+    background-position: -24px -23px;
+}
+
+a.interactor.inactive:hover {
+    background-position: -24px -255px;
+}
+
+a.interactor.inactive:active {
+    background-position: -24px -481px;
+}
+
+
+
+
+a.interactor.active {
+    background-position: -176px -22px;
+}
+
+a.interactor.active:hover {
+    background-position: -176px -255px;
+}
+
+a.interactor.active:active {
+    background-position: -176px -481px;
+}
+/*
+ * http://stackoverflow.com/questions/11223615/how-to-use-font-awesome-for-checkboxes-etc
+ */
+
+
+
+span.status {
+    width: 19%;
+    background: #a3d900;
+    display: block;
+    height: 3px;
+}
+
+.vol {
+    width: 100%;
+    height: 3px;
+    background: #333;
+}
+
+
+#ex1Slider .slider-selection {
+    background: #a3d900;
+}
+
+
+.slider.slider-horizontal {
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
