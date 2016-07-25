@@ -6,3 +6,4 @@ ofxMediaType
 ofxNetworkUtils
 ofxSSLManager
 ofxTaskQueue
+ofxXmlSettings
