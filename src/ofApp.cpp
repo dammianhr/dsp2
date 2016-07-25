@@ -168,39 +168,39 @@ void ofApp::setup(){
 
     // Register RPC methods.
     server.registerMethod("vol0",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol1);
     server.registerMethod("vol-3",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol2);
     server.registerMethod("vol-6",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol3);
     server.registerMethod("vol-9",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol4);
     server.registerMethod("vol-12",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol5);
     server.registerMethod("vol-15",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol6);
     server.registerMethod("vol-18",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol7);
     server.registerMethod("vol-21",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol8);
     server.registerMethod("vol-24",
-                          "Returns a random chunk of text to the client.",
+                          "Set master volume.",
                           this,
                           &ofApp::vol9);
 
@@ -211,132 +211,132 @@ void ofApp::setup(){
                           &ofApp::getVol);
     
     server.registerMethod("c1",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c1);
     server.registerMethod("c1mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c1mute);
     server.registerMethod("c1unmute",
-                          "Send a JSONRPC Ping Notification",
+                           "unmute channel",
                           this,
                           &ofApp::c1unmute);
     
     server.registerMethod("c2",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c2);
     server.registerMethod("c2mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c2mute);
     server.registerMethod("c2unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c2unmute);
     
     server.registerMethod("c3",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c3);
     server.registerMethod("c3mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c3mute);
     server.registerMethod("c3unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c3unmute);
     
     server.registerMethod("c4",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c4);
     server.registerMethod("c4mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c4mute);
     server.registerMethod("c4unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c4unmute);
     
     server.registerMethod("c5",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c5);
     server.registerMethod("c5mute",
-                          "Send a JSONRPC Ping Notification",
+                         "mute channel",
                           this,
                           &ofApp::c5mute);
     server.registerMethod("c5unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c5unmute);
     
     server.registerMethod("c6",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c6);
     server.registerMethod("c6mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c6mute);
     server.registerMethod("c6unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c6unmute);
     
     server.registerMethod("c7",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c7);
     server.registerMethod("c7mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c7mute);
     server.registerMethod("c7unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c7unmute);
     
     server.registerMethod("c8",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c8);
     server.registerMethod("c8mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c8mute);
     server.registerMethod("c8unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c8unmute);
     
     server.registerMethod("c9",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c9);
     server.registerMethod("c9mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c9mute);
     server.registerMethod("c9unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c9unmute);
     
     server.registerMethod("c10",
-                          "Returns a random chunk of text to the client.",
+                          "Get volume status.",
                           this,
                           &ofApp::c10);
     server.registerMethod("c10mute",
-                          "Send a JSONRPC Ping Notification",
+                          "mute channel",
                           this,
                           &ofApp::c10mute);
     server.registerMethod("c10unmute",
-                          "Send a JSONRPC Ping Notification",
+                          "unmute channel",
                           this,
                           &ofApp::c10unmute);
 
