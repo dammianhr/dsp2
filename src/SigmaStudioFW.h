@@ -20,8 +20,7 @@
 #ifndef __SIGMASTUDIOFW_H__
 #define __SIGMASTUDIOFW_H__
 
-#include "i2c.h"
-
+#include "I2Cdev.h"
 /*
  * TODO: Update for your system's data type
  */
