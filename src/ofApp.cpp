@@ -18,11 +18,8 @@ extern void default_download_IC_1();
 void ofApp::setup(){
     ofSetLogLevel(OF_LOG_VERBOSE);
     
-    if(XML.load("saves.xml")){
-        ofLogError("xml file loaded fine!");
-    }else{
+    if(!XML.load("saves.xml"))
         ofLogError("xml file not loaded!");
-    }
     
     default_download_IC_1();
     
