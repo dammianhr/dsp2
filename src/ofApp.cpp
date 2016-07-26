@@ -29,8 +29,8 @@ void ofApp::setup(){
     bus = new I2Cdev("/dev/i2c-1");
     bus->addressSet(DSP_addr);
     
-    mute_addr[1] = MOD_CANAL_0_MUTENOSLEWALG1MUTE_ADDR;
-    mute_addr[0] = MOD_CANAL_1_MUTENOSLEWALG5MUTE_ADDR;
+    mute_addr[0] = MOD_CANAL_0_MUTENOSLEWALG1MUTE_ADDR;
+    mute_addr[1] = MOD_CANAL_1_MUTENOSLEWALG5MUTE_ADDR;
     mute_addr[2] = MOD_CANAL_2_MUTENOSLEWALG3MUTE_ADDR;
     mute_addr[3] = MOD_CANAL_3_MUTENOSLEWALG6MUTE_ADDR;
     mute_addr[4] = MOD_CANAL_4_MUTENOSLEWALG7MUTE_ADDR;
