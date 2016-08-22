@@ -1,7 +1,7 @@
 /*
  * File:           D:\Mis Documentos\Archivo\AXÓN\Hitrix\DSP Completo HITRIX\Firmware DSP\DSP Completo HITRIX (con mux entrada)_IC_1_REG.h
  *
- * Created:        Friday, July 29, 2016 6:23:21 PM
+ * Created:        Friday, July 29, 2016 6:41:00 PM
  * Description:    DSP Completo HITRIX (con mux entrada):IC 1 control register definitions.
  *
  * This software is distributed in the hope that it will be useful,

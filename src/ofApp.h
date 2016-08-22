@@ -16,7 +16,6 @@
 class ofApp: public ofBaseApp{
 public:
     void setup();
-    //void draw();
     void exit();
     
     float HEX_to_DBL(uint8_t *data){
@@ -119,14 +118,15 @@ public:
     
     uint8_t *on;
     uint8_t *off;
+    uint8_t *on_dist;
     
     uint16_t mute_addr[10];
     uint16_t pick_addr[10];
+    uint16_t distor_addr[10];
     
     uint16_t vol;
     int vIndex;
     uint8_t **volumes;
     
     ofxXmlSettings XML;
-
 };

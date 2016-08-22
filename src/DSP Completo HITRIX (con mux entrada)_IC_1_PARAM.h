@@ -1,7 +1,7 @@
 /*
  * File:           D:\Mis Documentos\Archivo\AXÓN\Hitrix\DSP Completo HITRIX\Firmware DSP\DSP Completo HITRIX (con mux entrada)_IC_1_PARAM.h
  *
- * Created:        Friday, July 29, 2016 6:23:21 PM
+ * Created:        Friday, July 29, 2016 6:41:00 PM
  * Description:    DSP Completo HITRIX (con mux entrada):IC 1 parameter RAM definitions.
  *
  * This software is distributed in the hope that it will be useful,
@@ -2910,13 +2910,13 @@
 #define MOD_PARAMEQ1_ALG0_STAGE14_A1_VALUE             SIGMASTUDIOTYPE_FIXPOINT_CONVERT(0)
 #define MOD_PARAMEQ1_ALG0_STAGE14_A1_TYPE              SIGMASTUDIOTYPE_FIXPOINT
 
-/* Module Single 1 - Single Volume*/
-#define MOD_SINGLE1_COUNT                              1
-#define MOD_SINGLE1_DEVICE                             "IC1"
-#define MOD_SINGLE1_GAIN1940ALGNS1_ADDR                599
-#define MOD_SINGLE1_GAIN1940ALGNS1_FIXPT               0x00800000
-#define MOD_SINGLE1_GAIN1940ALGNS1_VALUE               SIGMASTUDIOTYPE_FIXPOINT_CONVERT(1)
-#define MOD_SINGLE1_GAIN1940ALGNS1_TYPE                SIGMASTUDIOTYPE_FIXPOINT
+/* Module Volumen_GRAL - Single Volume*/
+#define MOD_VOLUMEN_GRAL_COUNT                         1
+#define MOD_VOLUMEN_GRAL_DEVICE                        "IC1"
+#define MOD_VOLUMEN_GRAL_GAIN1940ALGNS1_ADDR           599
+#define MOD_VOLUMEN_GRAL_GAIN1940ALGNS1_FIXPT          0x00800000
+#define MOD_VOLUMEN_GRAL_GAIN1940ALGNS1_VALUE          SIGMASTUDIOTYPE_FIXPOINT_CONVERT(1)
+#define MOD_VOLUMEN_GRAL_GAIN1940ALGNS1_TYPE           SIGMASTUDIOTYPE_FIXPOINT
 
 /* Module Gain1_3 - Linear Gain*/
 #define MOD_GAIN1_3_COUNT                              3
