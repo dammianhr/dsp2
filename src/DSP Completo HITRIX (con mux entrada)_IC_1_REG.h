@@ -1,7 +1,7 @@
 /*
- * File:           F:\Varios\AXÓN\Hitrix\DSP Completo HITRIX\Firmware DSP\DSP Completo HITRIX (con mux entrada)_IC_1_REG.h
+ * File:           D:\Mis Documentos\Archivo\AXÓN\Hitrix\DSP Completo HITRIX\Firmware DSP\DSP Completo HITRIX (con mux entrada)_IC_1_REG.h
  *
- * Created:        Thursday, June 16, 2016 11:42:47 AM
+ * Created:        Friday, July 29, 2016 6:23:21 PM
  * Description:    DSP Completo HITRIX (con mux entrada):IC 1 control register definitions.
  *
  * This software is distributed in the hope that it will be useful,
@@ -943,12 +943,12 @@
 /* CRC Ideal_1  - Registers (IC 1) */
 #define REG_CRC_IDEAL_1_IC_1_ADDR                 0xE200
 #define REG_CRC_IDEAL_1_IC_1_BYTE                 2
-#define REG_CRC_IDEAL_1_IC_1_VALUE                0x2D6E
+#define REG_CRC_IDEAL_1_IC_1_VALUE                0x1B80
 
 /* CRC Ideal_2  - Registers (IC 1) */
 #define REG_CRC_IDEAL_2_IC_1_ADDR                 0xE201
 #define REG_CRC_IDEAL_2_IC_1_BYTE                 2
-#define REG_CRC_IDEAL_2_IC_1_VALUE                0x7C80
+#define REG_CRC_IDEAL_2_IC_1_VALUE                0x5F54
 
 /* CRC Enable  - Registers (IC 1) */
 #define REG_CRC_ENABLE_IC_1_ADDR                  0xE202
@@ -2907,12 +2907,12 @@
 #define R128_MSB_POSITION_UPPER_SLOT_IC_1_SHIFT   15
 
 /* CRC Ideal_1 (IC 1) */
-#define R129_CRC_IDEAL_1_IC_1                     0x2D6E /* 0010110101101110b	[15:0] */
+#define R129_CRC_IDEAL_1_IC_1                     0x1B80 /* 0001101110000000b	[15:0] */
 #define R129_CRC_IDEAL_1_IC_1_MASK                0xFFFF
 #define R129_CRC_IDEAL_1_IC_1_SHIFT               0
 
 /* CRC Ideal_2 (IC 1) */
-#define R130_CRC_IDEAL_2_IC_1                     0x7C80 /* 0111110010000000b	[15:0] */
+#define R130_CRC_IDEAL_2_IC_1                     0x5F54 /* 0101111101010100b	[15:0] */
 #define R130_CRC_IDEAL_2_IC_1_MASK                0xFFFF
 #define R130_CRC_IDEAL_2_IC_1_SHIFT               0
 
