@@ -60,7 +60,6 @@ void ofApp::setup(){
     
     vol = MOD_VOLUMEN_GRAL_DEVICE;
     
-    
     paramData[0][0] = MOD_PARAMEQ1_ALG0_STAGE0_B0_ADDR;
     paramData[0][1] = MOD_PARAMEQ1_ALG0_STAGE0_B1_ADDR;
     paramData[0][2] = MOD_PARAMEQ1_ALG0_STAGE0_B2_ADDR;
@@ -196,6 +195,11 @@ void ofApp::setup(){
     d10b = XML.getValue("SAVES:D10",0);
     
     vIndex = XML.getValue("SAVES:VOL",0);
+    for (int i = 0; i<7; i++) {
+        if (XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0)) {
+            //XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0)
+        }
+    }
     
     if (c1b) {
         writeDSP(bus, mute_addr[0],on);
@@ -226,6 +230,37 @@ void ofApp::setup(){
     }
     if (c10b) {
         writeDSP(bus, mute_addr[9],on);
+    }
+    
+    if (d1b) {
+        writeDSP(bus, distor_addr[0],on_dist);
+    }
+    if (d2b) {
+        writeDSP(bus, distor_addr[1],on_dist);
+    }
+    if (d3b) {
+        writeDSP(bus, distor_addr[2],on_dist);
+    }
+    if (d4b) {
+        writeDSP(bus, distor_addr[3],on_dist);
+    }
+    if (d5b) {
+        writeDSP(bus, distor_addr[4],on_dist);
+    }
+    if (d6b) {
+        writeDSP(bus, distor_addr[5],on_dist);
+    }
+    if (d7b) {
+        writeDSP(bus, distor_addr[6],on_dist);
+    }
+    if (d8b) {
+        writeDSP(bus, distor_addr[7],on_dist);
+    }
+    if (d9b) {
+        writeDSP(bus, distor_addr[8],on_dist);
+    }
+    if (d10b) {
+        writeDSP(bus, distor_addr[9],on_dist);
     }
     
     writeDSP(bus, vol,volumes[vIndex]);
@@ -802,5 +837,77 @@ void ofApp::c1distor(){
 }
 void ofApp::c1undistor(){
     writeDSP(bus, distor_addr[0],off);
+    d1b = 0;
+}
+void ofApp::c2distor(){
+    writeDSP(bus, distor_addr[1],on_dist);
+    d1b = 1;
+}
+void ofApp::c2undistor(){
+    writeDSP(bus, distor_addr[1],off);
+    d1b = 0;
+}
+void ofApp::c3distor(){
+    writeDSP(bus, distor_addr[2],on_dist);
+    d1b = 1;
+}
+void ofApp::c3undistor(){
+    writeDSP(bus, distor_addr[2],off);
+    d1b = 0;
+}
+void ofApp::c4distor(){
+    writeDSP(bus, distor_addr[3],on_dist);
+    d1b = 1;
+}
+void ofApp::c4undistor(){
+    writeDSP(bus, distor_addr[3],off);
+    d1b = 0;
+}
+void ofApp::c5distor(){
+    writeDSP(bus, distor_addr[4],on_dist);
+    d1b = 1;
+}
+void ofApp::c5undistor(){
+    writeDSP(bus, distor_addr[4],off);
+    d1b = 0;
+}
+void ofApp::c6distor(){
+    writeDSP(bus, distor_addr[5],on_dist);
+    d1b = 1;
+}
+void ofApp::c6undistor(){
+    writeDSP(bus, distor_addr[5],off);
+    d1b = 0;
+}
+void ofApp::c7distor(){
+    writeDSP(bus, distor_addr[6],on_dist);
+    d1b = 1;
+}
+void ofApp::c7undistor(){
+    writeDSP(bus, distor_addr[6],off);
+    d1b = 0;
+}
+void ofApp::c8distor(){
+    writeDSP(bus, distor_addr[7],on_dist);
+    d1b = 1;
+}
+void ofApp::c8undistor(){
+    writeDSP(bus, distor_addr[7],off);
+    d1b = 0;
+}
+void ofApp::c9distor(){
+    writeDSP(bus, distor_addr[8],on_dist);
+    d1b = 1;
+}
+void ofApp::c9undistor(){
+    writeDSP(bus, distor_addr[8],off);
+    d1b = 0;
+}
+void ofApp::c10distor(){
+    writeDSP(bus, distor_addr[9],on_dist);
+    d1b = 1;
+}
+void ofApp::c10undistor(){
+    writeDSP(bus, distor_addr[9],off);
     d1b = 0;
 }

@@ -162,13 +162,14 @@ public:
     
     ofx::HTTP::JSONRPCServer server;
     
-    
     //parametriEQ        --------------------------------------------------//
     int fs = 192000;
     int gain = 0;
     //float frec = 100;
     //float q = 0.707;
     //float boost = -15;
+    
+    float bandParam[7][3];
     
     double ax;
     double omega;
