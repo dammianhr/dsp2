@@ -155,7 +155,13 @@ public:
     void d9(ofx::JSONRPC::MethodArgs& args);
     void d10(ofx::JSONRPC::MethodArgs& args);
     
+    void setEq(ofx::JSONRPC::MethodArgs& args);
+    mutable std::mutex mutex;
+    std::string userText;
+    void setUserText(const std::string& text);
+    
     ofx::HTTP::JSONRPCServer server;
+    
     
     //parametriEQ        --------------------------------------------------//
     int fs = 192000;

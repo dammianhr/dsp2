@@ -581,8 +581,23 @@ void ofApp::setup(){
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
+    
+    server.registerMethod("seteq",
+                          "Sets text from the user.",
+                          this,
+                          &ofApp::setEq);
 
     server.start();
+}
+
+void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
+    setUserText(args.params.asString());
+    ofLogVerbose("ofApp::setEq") << args.params.asString();
+}
+
+void ofApp::setUserText(const std::string& text){
+    std::unique_lock<std::mutex> lock(mutex);
+    userText = text;
 }
 
 void ofApp::exit(){
