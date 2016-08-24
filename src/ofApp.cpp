@@ -60,53 +60,48 @@ void ofApp::setup(){
     
     vol = MOD_VOLUMEN_GRAL_DEVICE;
     
-    MOD_PARAMEQ1_ALG0_STAGE0_B0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE0_B1_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE0_B2_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE0_A0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE0_A1_ADDR
     
-    MOD_PARAMEQ1_ALG0_STAGE1_B0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE1_B1_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE1_B2_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE1_A0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE1_A1_ADDR
+    paramData[0][0] = MOD_PARAMEQ1_ALG0_STAGE0_B0_ADDR;
+    paramData[0][1] = MOD_PARAMEQ1_ALG0_STAGE0_B1_ADDR;
+    paramData[0][2] = MOD_PARAMEQ1_ALG0_STAGE0_B2_ADDR;
+    paramData[0][3] = MOD_PARAMEQ1_ALG0_STAGE0_A0_ADDR;
+    paramData[0][4] = MOD_PARAMEQ1_ALG0_STAGE0_A1_ADDR;
     
-    MOD_PARAMEQ1_ALG0_STAGE2_B0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE2_B1_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE2_B2_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE2_A0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE2_A1_ADDR
+    paramData[1][0] = MOD_PARAMEQ1_ALG0_STAGE1_B0_ADDR;
+    paramData[1][1] = MOD_PARAMEQ1_ALG0_STAGE1_B1_ADDR;
+    paramData[1][2] = MOD_PARAMEQ1_ALG0_STAGE1_B2_ADDR;
+    paramData[1][3] = MOD_PARAMEQ1_ALG0_STAGE1_A0_ADDR;
+    paramData[1][4] = MOD_PARAMEQ1_ALG0_STAGE1_A1_ADDR;
     
-    MOD_PARAMEQ1_ALG0_STAGE3_B0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE3_B1_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE3_B2_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE3_A0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE3_A1_ADDR
+    paramData[2][0] = MOD_PARAMEQ1_ALG0_STAGE2_B0_ADDR;
+    paramData[2][1] = MOD_PARAMEQ1_ALG0_STAGE2_B1_ADDR;
+    paramData[2][2] = MOD_PARAMEQ1_ALG0_STAGE2_B2_ADDR;
+    paramData[2][3] = MOD_PARAMEQ1_ALG0_STAGE2_A0_ADDR;
+    paramData[2][4] = MOD_PARAMEQ1_ALG0_STAGE2_A1_ADDR;
     
-    MOD_PARAMEQ1_ALG0_STAGE4_B0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE4_B1_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE4_B2_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE4_A0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE4_A1_ADDR
+    paramData[3][0] = MOD_PARAMEQ1_ALG0_STAGE3_B0_ADDR;
+    paramData[3][1] = MOD_PARAMEQ1_ALG0_STAGE3_B1_ADDR;
+    paramData[3][2] = MOD_PARAMEQ1_ALG0_STAGE3_B2_ADDR;
+    paramData[3][3] = MOD_PARAMEQ1_ALG0_STAGE3_A0_ADDR;
+    paramData[3][4] = MOD_PARAMEQ1_ALG0_STAGE3_A1_ADDR;
     
-    MOD_PARAMEQ1_ALG0_STAGE5_B0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE5_B1_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE5_B2_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE5_A0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE5_A1_ADDR
+    paramData[4][0] = MOD_PARAMEQ1_ALG0_STAGE4_B0_ADDR;
+    paramData[4][1] = MOD_PARAMEQ1_ALG0_STAGE4_B1_ADDR;
+    paramData[4][2] = MOD_PARAMEQ1_ALG0_STAGE4_B2_ADDR;
+    paramData[4][3] = MOD_PARAMEQ1_ALG0_STAGE4_A0_ADDR;
+    paramData[4][4] = MOD_PARAMEQ1_ALG0_STAGE4_A1_ADDR;
     
-    MOD_PARAMEQ1_ALG0_STAGE6_B0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE6_B1_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE6_B2_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE6_A0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE6_A1_ADDR
+    paramData[5][0] = MOD_PARAMEQ1_ALG0_STAGE5_B0_ADDR;
+    paramData[5][1] = MOD_PARAMEQ1_ALG0_STAGE5_B1_ADDR;
+    paramData[5][2] = MOD_PARAMEQ1_ALG0_STAGE5_B2_ADDR;
+    paramData[5][3] = MOD_PARAMEQ1_ALG0_STAGE5_A0_ADDR;
+    paramData[5][4] = MOD_PARAMEQ1_ALG0_STAGE5_A1_ADDR;
     
-    MOD_PARAMEQ1_ALG0_STAGE7_B0_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE7_B1_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE7_B2_ADDR
-    MOD_PARAMEQ1_ALG0_STAGE7_A0_ADDR 
-    MOD_PARAMEQ1_ALG0_STAGE7_A1_ADDR
+    paramData[6][0] = MOD_PARAMEQ1_ALG0_STAGE6_B0_ADDR;
+    paramData[6][1] = MOD_PARAMEQ1_ALG0_STAGE6_B1_ADDR;
+    paramData[6][2] = MOD_PARAMEQ1_ALG0_STAGE6_B2_ADDR;
+    paramData[6][3] = MOD_PARAMEQ1_ALG0_STAGE6_A0_ADDR;
+    paramData[6][4] = MOD_PARAMEQ1_ALG0_STAGE6_A1_ADDR;
     
     //vIndex = 0;
     volumes = new uint8_t *[9];
@@ -188,6 +183,18 @@ void ofApp::setup(){
     c8b = XML.getValue("SAVES:BT8",0);
     c9b = XML.getValue("SAVES:BT9",0);
     c10b = XML.getValue("SAVES:BT10",0);
+    
+    d1b = XML.getValue("SAVES:D1",0);
+    d2b = XML.getValue("SAVES:D2",0);
+    d3b = XML.getValue("SAVES:D3",0);
+    d4b = XML.getValue("SAVES:D4",0);
+    d5b = XML.getValue("SAVES:D5",0);
+    d6b = XML.getValue("SAVES:D6",0);
+    d7b = XML.getValue("SAVES:D7",0);
+    d8b = XML.getValue("SAVES:D8",0);
+    d9b = XML.getValue("SAVES:D9",0);
+    d10b = XML.getValue("SAVES:D10",0);
+    
     vIndex = XML.getValue("SAVES:VOL",0);
     
     if (c1b) {
@@ -443,6 +450,137 @@ void ofApp::setup(){
                           "Returns channel pick value [0,100].",
                           this,
                           &ofApp::c10vol);
+    //distortion /-------------------------------------
+    server.registerMethod("c1distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c1undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d1",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    server.registerMethod("c2distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c2undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d2",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    server.registerMethod("c3distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c3undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d3",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    server.registerMethod("c4distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c4undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d4",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    server.registerMethod("c5distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c5undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d5",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    
+    server.registerMethod("c6distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c6undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d6",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    server.registerMethod("c7distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c7undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d7",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    server.registerMethod("c8distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c8undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d8",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    server.registerMethod("c9distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c9undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d9",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
+    
+    server.registerMethod("c10distor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1distor);
+    server.registerMethod("c10undistor",
+                          "distortion channel",
+                          this,
+                          &ofApp::c1undistor);
+    server.registerMethod("d10",
+                          "Returns distortion state.",
+                          this,
+                          &ofApp::d1);
 
     server.start();
 }
@@ -459,6 +597,17 @@ void ofApp::exit(){
     XML.setValue("SAVES:BT8", c8b);
     XML.setValue("SAVES:BT9", c9b);
     XML.setValue("SAVES:BT10", c10b);
+    
+    XML.setValue("SAVES:D1", c1b);
+    XML.setValue("SAVES:D2", c2b);
+    XML.setValue("SAVES:D3", c3b);
+    XML.setValue("SAVES:D4", c4b);
+    XML.setValue("SAVES:D5", c5b);
+    XML.setValue("SAVES:D6", c6b);
+    XML.setValue("SAVES:D7", c7b);
+    XML.setValue("SAVES:D8", c8b);
+    XML.setValue("SAVES:D9", c9b);
+    XML.setValue("SAVES:D10", c10b);
     
     XML.setValue("SAVES:VOL", vIndex);
 
@@ -630,4 +779,13 @@ void ofApp::c9vol(ofx::JSONRPC::MethodArgs& args){
 void ofApp::c10vol(ofx::JSONRPC::MethodArgs& args){
     args.result = HEX_to_DBL(readDSP(bus, pick_addr[8]));
     //ofLogVerbose("c10vol") << args.result.asString();
+}
+
+void ofApp::c1distor(){
+    writeDSP(bus, distor_addr[0],on_dist);
+    d1b = 1;
+}
+void ofApp::c1undistor(){
+    writeDSP(bus, distor_addr[0],off);
+    d1b = 0;
 }

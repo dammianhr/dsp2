@@ -110,8 +110,115 @@ public:
     void c8vol(ofx::JSONRPC::MethodArgs& args);
     void c9vol(ofx::JSONRPC::MethodArgs& args);
     void c10vol(ofx::JSONRPC::MethodArgs& args);
-
+    
+    void c1distor();
+    void c2distor();
+    void c3distor();
+    void c4distor();
+    void c5distor();
+    void c6distor();
+    void c7distor();
+    void c8distor();
+    void c9distor();
+    void c10distor();
+    
+    void c1undistor();
+    void c2undistor();
+    void c3undistor();
+    void c4undistor();
+    void c5undistor();
+    void c6undistor();
+    void c7undistor();
+    void c8undistor();
+    void c9undistor();
+    void c10undistor();
+    
+    int d1b;
+    int d2b;
+    int d3b;
+    int d4b;
+    int d5b;
+    int d6b;
+    int d7b;
+    int d8b;
+    int d9b;
+    int d10b;
+    
+    void d1(ofx::JSONRPC::MethodArgs& args);
+    void d2(ofx::JSONRPC::MethodArgs& args);
+    void d3(ofx::JSONRPC::MethodArgs& args);
+    void d4(ofx::JSONRPC::MethodArgs& args);
+    void d5(ofx::JSONRPC::MethodArgs& args);
+    void d6(ofx::JSONRPC::MethodArgs& args);
+    void d7(ofx::JSONRPC::MethodArgs& args);
+    void d8(ofx::JSONRPC::MethodArgs& args);
+    void d9(ofx::JSONRPC::MethodArgs& args);
+    void d10(ofx::JSONRPC::MethodArgs& args);
+    
     ofx::HTTP::JSONRPCServer server;
+    
+    //parametriEQ        --------------------------------------------------//
+    int fs = 192000;
+    int gain = 0;
+    //float frec = 100;
+    //float q = 0.707;
+    //float boost = -15;
+    
+    double ax;
+    double omega;
+    double seno;
+    double coseno;
+    double alpha;
+    double a0;
+    double gain_lin;
+    
+    double block[5];
+    /*
+    double b0;
+    double b1;
+    double b2;
+    double a1;
+    double a2;
+    */
+    uint16_t paramData[7][5];
+    
+    void calcEQ(float frec, float q, float boost, int band){
+        ax = pow(10,(boost/40));
+        omega = 2*PI*frec/fs;
+        seno = sin(omega);
+        coseno = cos(omega);
+        alpha = seno/(2*q);
+        a0 = 1+(alpha/ax);
+        gain_lin = pow(10,(gain/20))/a0;
+        /*
+        b0 = (1+(alpha*ax))*gain_lin;
+        b1 = -1*(2*coseno)*gain_lin;
+        b2 = (1-(alpha*ax))*gain_lin;
+        a1 = (-2*coseno)/a0;
+        a2 = (1-(alpha/ax))/a0;
+        */
+        block[0] = (1+(alpha*ax))*gain_lin;
+        block[1] = -1*(2*coseno)*gain_lin;
+        block[2] = (1-(alpha*ax))*gain_lin;
+        block[3] = (-2*coseno)/a0;
+        block[4] = (1-(alpha/ax))/a0;
+        
+        for (int i = 0; i<5; i++)
+            writeDSP(bus, paramData[band][i],toHex(block[i]));
+    }
+    
+    uint8_t * toHex(double n){
+        uint8_t *buff;
+        buff = new uint8_t[4];
+        int c =(int)(n*pow(2,23));
+        buff[0] = (c >> 24);
+        buff[1] = (c >> 16);
+        buff[2] = (c >> 8);
+        buff[3] = (uint8_t)(c);
+        
+        return buff;
+    }
+    //--------------------------------------------------------------------//
     
     //i2c dev
     I2Cdev * bus;
