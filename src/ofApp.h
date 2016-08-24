@@ -188,6 +188,18 @@ public:
     */
     uint16_t paramData[7][5];
     
+    uint8_t * toHex(double n){
+        uint8_t *buff;
+        buff = new uint8_t[4];
+        int c =(int)(n*pow(2,23));
+        buff[0] = (c >> 24);
+        buff[1] = (c >> 16);
+        buff[2] = (c >> 8);
+        buff[3] = (uint8_t)(c);
+        
+        return buff;
+    }
+    
     void calcEQ(float frec, float q, float boost, int band){
         ax = pow(10,(boost/40));
         omega = 2*PI*frec/fs;
@@ -211,18 +223,6 @@ public:
         
         for (int i = 0; i<5; i++)
             writeDSP(bus, paramData[band][i],toHex(block[i]));
-    }
-    
-    uint8_t * toHex(double n){
-        uint8_t *buff;
-        buff = new uint8_t[4];
-        int c =(int)(n*pow(2,23));
-        buff[0] = (c >> 24);
-        buff[1] = (c >> 16);
-        buff[2] = (c >> 8);
-        buff[3] = (uint8_t)(c);
-        
-        return buff;
     }
     //--------------------------------------------------------------------//
     
