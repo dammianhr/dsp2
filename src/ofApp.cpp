@@ -642,18 +642,25 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     ofLogVerbose("setEq") << args.params.asString();
     string cad = args.params.asString();
     vector<string> splitItems = ofSplitString(cad, "_");
-    ofLogVerbose("setEq_split") << splitItems;
-    /*
-    if (splitItems.size() == 4) {
+    //ofLogVerbose("setEq_split") << splitItems;
+    
+    if (splitItems.size() == 5) {
         bandParam[splitItems.[0]][0] = splitItems.[1];
         bandParam[splitItems.[0]][1] = splitItems.[2];
         bandParam[splitItems.[0]][2] = splitItems.[3];
         
-        calcEQ(splitItems.[1],
-               splitItems.[2],
-               splitItems.[3],
-               splitItems.[0]);
-    }*/
+        byPass[splitItems.[0]] = splitItems.[4];
+        
+        if (byPass[splitItems.[0]]){
+            calcEQ(splitItems.[1],
+                   splitItems.[2],
+                   splitItems.[3],
+                   splitItems.[0]);
+        }
+        else{
+            disableEQBand(splitItems.[0]);
+        }
+    }
 }
 /*
 void ofApp:getVol(ofx::JSONRPC::MethodArgs& args){
