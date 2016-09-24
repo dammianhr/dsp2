@@ -170,23 +170,24 @@ $(document).ready(function() {
 
 
 
-// Get all channels and initialize status check
-$('.chanel').each(function( index ) {
+    // Get all channels and initialize status check
+    $('.chanel').each(function( index ) {
 
-    var $this = $(this);
-    var $thisId = $this.attr('id')
+        var $this = $(this);
+        var $thisId = $this.attr('id')
 
-    getDistortionStatus($thisId);
-
-
-    setInterval(function(){
-        if($this.find('.interactor').hasClass('active') && !configIsOpen)
-        {
-            getVolStatus($thisId);
-
-        }
+        getDistortionStatus($thisId);
         getStatus($thisId);
-    },500)
+
+
+        setInterval(function(){
+            if($this.find('.interactor').hasClass('active') && !configIsOpen)
+            {
+                getVolStatus($thisId);
+
+            }
+            
+        },500)
 
 
 });
