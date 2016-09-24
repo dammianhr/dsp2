@@ -84,6 +84,28 @@ $(document).ready(function() {
 
     initializeButtons();
 
+    
+ JSONRPCClient.call('getVol',
+        null,
+        function(result) {
+                $('#ex1').val(result);
+                var generalVolumen = $('#ex1').slider({
+                    formatter: function(value) {
+                        return value;
+                    },
+                    step: 3,
+                    tooltip: 'always'
+
+                }).on('slide', volumeChange);
+
+
+        },
+        function(error) {
+            alert('ERROR: Mewito, Take a look the in JS console for more freacky details.');
+            console.log('ERROR; '+ error);
+        });
+
+
 });
 
 function getStatus(channel){
@@ -173,24 +195,4 @@ var volumeChange = function() {
    JSONRPCClient.notify('vol'+generalVolumen.val()); 
 };
 
-
- JSONRPCClient.call('getVol',
-        null,
-        function(result) {
-                $('#ex1').val(result);
-                var generalVolumen = $('#ex1').slider({
-                    formatter: function(value) {
-                        return value;
-                    },
-                    step: 3,
-                    tooltip: 'always'
-
-                }).on('slide', volumeChange);
-
-
-        },
-        function(error) {
-            alert('ERROR: Mewito, Take a look the in JS console for more freacky details.');
-            console.log('ERROR; '+ error);
-        });
 
