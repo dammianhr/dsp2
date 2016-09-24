@@ -69,20 +69,26 @@ function initializeButtons() {
 
     $('body').on('click', '.distortion.active',function(e) {
         e.preventDefault();
-        console.log("Distortion:", $thisId+'dis');
+        
         var $this = $(this);
         var $thisId = $this.parent().attr('id')
-        JSONRPCClient.notify($thisId+'dis');
+
+        console.log("Distortion:", $thisId+'und');
+
+        JSONRPCClient.notify($thisId+'und');
         getDistortionStatus($thisId);
     });
 
 
     $('body').on('click','.distortion.inactive', function(e) {
         e.preventDefault();
-        console.log("UnDisturtion:", $thisId+'und');
+        
         var $this = $(this);
         var $thisId = $this.parent().attr('id')
-        JSONRPCClient.notify($thisId+'und');
+
+        console.log("UnDisturtion:", $thisId+'dist');
+
+        JSONRPCClient.notify($thisId+'dist');
         getDistortionStatus($thisId);
     });
 
