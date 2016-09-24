@@ -642,17 +642,25 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     ofLogVerbose("setEq") << args.params.asString();
     string cad = args.params.asString();
     vector<string> splitItems = ofSplitString(cad, "_");
-    /*
-    if (splitItems.size() == 4) {
+    //ofLogVerbose("setEq_split") << splitItems;
+    
+    if (splitItems.size() == 5) {
         bandParam[splitItems.[0]][0] = splitItems.[1];
         bandParam[splitItems.[0]][1] = splitItems.[2];
         bandParam[splitItems.[0]][2] = splitItems.[3];
         
-        calcEQ(splitItems.[1],
-               splitItems.[2],
-               splitItems.[3],
-               splitItems.[0]);
-    }*/
+        byPass[splitItems.[0]] = splitItems.[4];
+        
+        if (byPass[splitItems.[0]]){
+            calcEQ(splitItems.[1],
+                   splitItems.[2],
+                   splitItems.[3],
+                   splitItems.[0]);
+        }
+        else{
+            disableEQBand(splitItems.[0]);
+        }
+    }
 }
 /*
 void ofApp:getVol(ofx::JSONRPC::MethodArgs& args){
@@ -689,6 +697,13 @@ void ofApp::exit(){
     XML.setValue("SAVES:D10", c10b);
     
     XML.setValue("SAVES:VOL", vIndex);
+    
+    for (int i = 0; i<7; i++) {
+        XML.setValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP", byPass[i]);
+        XML.setValue("SAVES:EQ:BD"+ ofToString(i+1) +":FR", bandParam[i][0]);
+        XML.setValue("SAVES:EQ:BD"+ ofToString(i+1) +":Q", bandParam[i][1]);
+        XML.setValue("SAVES:EQ:BD"+ ofToString(i+1) +":BS", bandParam[i][2]);
+    }
 
     XML.saveFile("saves.xml");
 }
