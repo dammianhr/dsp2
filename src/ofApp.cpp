@@ -649,7 +649,7 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     
     for (iterador = splitItems.begin(); iterador != 5; iterador++) {
         ofLogVerbose("setEq") <<  *iterador;
-        buf[i] = oftoInt(*iterador);
+        buf[i] = ofToInt(*iterador);
         i++;
     }
 
