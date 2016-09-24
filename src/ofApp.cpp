@@ -646,8 +646,10 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     int buf[5];
     
     for (iterador = splitItems.begin(); iterador != 5; iterador++) {
+        int i = 0;
         ofLogVerbose("setEq") <<  *iterador;
         buf[i] = *iterador;
+        i++;
     }
 
     bandParam[buf[0]][0] = buf[1];
