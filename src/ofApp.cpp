@@ -196,20 +196,20 @@ void ofApp::setup(){
     
     vIndex = XML.getValue("SAVES:VOL",0);
     for (int i = 0; i<7; i++) {
-        if (!XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0)) {
-
-        }
-        else{
-            byPass[i] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0);
-            
-            bandParam[i][0] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":FR",0);
-            bandParam[i][1] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":Q",0);
-            bandParam[i][2] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BS",0);
-            
+        byPass[i] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0);
+        bandParam[i][0] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":FR",0);
+        bandParam[i][1] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":Q",0);
+        bandParam[i][2] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BS",0);
+        
+        if (byPass[i]) {
             calcEQ(bandParam[i][0],
                    bandParam[i][1],
                    bandParam[i][2],
                    i);
+        }
+        else{
+            //disable EQ band
+            disableEQBand(i)
         }
     }
     
