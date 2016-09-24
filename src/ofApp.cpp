@@ -209,7 +209,7 @@ void ofApp::setup(){
         }
         else{
             //disable EQ band
-            disableEQBand(i)
+            disableEQBand(i);
         }
     }
     
