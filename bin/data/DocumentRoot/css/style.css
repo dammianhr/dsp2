@@ -112,6 +112,7 @@ span.status {
     background: #a3d900;
     display: block;
     height: 3px;
+    max-width: 100%;
 }
 
 .vol {
