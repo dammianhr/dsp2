@@ -642,6 +642,7 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     ofLogVerbose("setEq") << args.params.asString();
     string cad = args.params.asString();
     vector<string> splitItems = ofSplitString(cad, "_");
+    ofLogVerbose("setEq_split") << splitItems;
     /*
     if (splitItems.size() == 4) {
         bandParam[splitItems.[0]][0] = splitItems.[1];
