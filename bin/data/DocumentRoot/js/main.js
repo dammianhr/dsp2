@@ -169,6 +169,29 @@ $(document).ready(function() {
     getGeneralVolume();
 
 
+
+// Get all channels and initialize status check
+$('.chanel').each(function( index ) {
+
+    var $this = $(this);
+    var $thisId = $this.attr('id')
+
+    getDistortionStatus($thisId);
+
+
+    setInterval(function(){
+        if($this.find('.interactor').hasClass('active') && !configIsOpen)
+        {
+            getVolStatus($thisId);
+
+        }
+        getStatus($thisId);
+    },500)
+
+
+});
+
+
 });
 
 
@@ -255,20 +278,4 @@ function getVolStatus(channel){
 
 
 
-// Get all channels and initialize status check
-$('.chanel').each(function( index ) {
 
-    var $this = $(this);
-    var $thisId = $this.attr('id')
-
-
-    setInterval(function(){
-        if($this.find('.interactor').hasClass('active') && !configIsOpen)
-        {
-            getVolStatus($thisId);
-        }
-        getStatus($thisId);
-    },500)
-
-
-});
