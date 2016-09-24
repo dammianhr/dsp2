@@ -617,7 +617,7 @@ void ofApp::setup(){
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("seteq",
+    server.registerMethod("setEq",
                           "Sets text from the user.",
                           this,
                           &ofApp::setEq);
@@ -628,6 +628,12 @@ void ofApp::setup(){
 void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     setUserText(args.params.asString());
     ofLogVerbose("ofApp::setEq") << args.params.asString();
+    
+    
+    calcEQ(ofSplitString(args.params.asString, "_")[1],
+           ofSplitString(args.params.asString, "_")[2],
+           ofSplitString(args.params.asString, "_")[3],
+           ofSplitString(args.params.asString, "_")[0])
 }
 
 void ofApp::setUserText(const std::string& text){
