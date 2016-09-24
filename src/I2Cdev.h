@@ -73,7 +73,7 @@ public:
         msg_rdwr.nmsgs = 2;
         
         if(ioctl(fd,I2C_RDWR,&msg_rdwr)<0)
-            ofLog(OF_LOG_ERROR, "Failed to reading block data");
+            //ofLog(OF_LOG_ERROR, "Failed to reading block data");
     }
     
     /*---------------------------------------------------------------------
@@ -99,7 +99,7 @@ public:
         i2cmsg.buf   = my_buf;
         
         if(ioctl(fd,I2C_RDWR,&msg_rdwr)<0)
-            ofLog(OF_LOG_ERROR, "Failed to writing block data");
+            //ofLog(OF_LOG_ERROR, "Failed to writing block data");
     }
     
 private:

@@ -708,7 +708,7 @@ void ofApp::c1mute(){
 }
 void ofApp::c1(ofx::JSONRPC::MethodArgs& args){
     args.result = c1b;
-    //ofLogVerbose("c1") << args.result.asString();
+    ofLogVerbose("c1") << args.result.asString();
 }//-------------------------------------------
 void ofApp::c2unmute(){
     writeDSP(bus, mute_addr[1],on);
@@ -820,8 +820,9 @@ void ofApp::c10(ofx::JSONRPC::MethodArgs& args){
 }//-------------------------------------------
 
 void ofApp::c1vol(ofx::JSONRPC::MethodArgs& args){
-    args.result = HEX_to_DBL(readDSP(bus, pick_addr[0]));
-    //ofLogVerbose("c1vol") << args.result.asString();
+    //args.result = HEX_to_DBL(readDSP(bus, pick_addr[0]));
+    args.result = 25;
+    ofLogVerbose("c1vol") << args.result.asString();
 }
 void ofApp::c2vol(ofx::JSONRPC::MethodArgs& args){
     args.result = HEX_to_DBL(readDSP(bus, pick_addr[1]));
