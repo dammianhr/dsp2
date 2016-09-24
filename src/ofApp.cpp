@@ -644,9 +644,9 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     vector<string> splitItems = ofSplitString(cad, "_");
     
     int buf[5];
+    int i = 0;
     
     for (iterador = splitItems.begin(); iterador != 5; iterador++) {
-        int i = 0;
         ofLogVerbose("setEq") <<  *iterador;
         buf[i] = *iterador;
         i++;
