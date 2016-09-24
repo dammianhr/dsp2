@@ -59,7 +59,7 @@ function initializeButtons() {
 
     $('body').on('click', '.distortion.active',function(e) {
         e.preventDefault();
-        console.log("mute");
+        console.log("Distortion");
         var $this = $(this);
         var $thisId = $this.parent().attr('id')
         JSONRPCClient.notify($thisId+'dis');
@@ -69,7 +69,7 @@ function initializeButtons() {
 
     $('body').on('click','.distortion.inactive', function(e) {
         e.preventDefault();
-        console.log("unMute");
+        console.log("UnDisturtion");
         var $this = $(this);
         var $thisId = $this.parent().attr('id')
         JSONRPCClient.notify($thisId+'und');
@@ -202,18 +202,18 @@ function getDistortionStatus(channel){
     var _channel = channel;
     var $this = $(this);
 
-    JSONRPCClient.call(channel+'d',
+    JSONRPCClient.call('c'+channel+'d',
         null,
         function(result) {
             if(result == 1)
             {
-                $('#'+_channel+' .interactor').removeClass('active inactive');
-                $('#'+_channel+' .interactor').addClass('active');
+                $('#'+_channel+' .distortion').removeClass('active inactive');
+                $('#'+_channel+' .distortion').addClass('active');
             }
             else
             {
-                $('#'+_channel+' .interactor').removeClass('active inactive');
-                $('#'+_channel+' .interactor').addClass('inactive');
+                $('#'+_channel+' .distortion').removeClass('active inactive');
+                $('#'+_channel+' .distortion').addClass('inactive');
             }
         },
         function(error) {
