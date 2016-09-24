@@ -514,120 +514,120 @@ void ofApp::setup(){
     server.registerMethod("c2dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c2distor);
     server.registerMethod("c2und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c2undistor);
     server.registerMethod("c2d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d2);
     
     server.registerMethod("c3dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c3distor);
     server.registerMethod("c3und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c3undistor);
     server.registerMethod("c3d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d3);
     
     server.registerMethod("c4dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c4distor);
     server.registerMethod("c4und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c4undistor);
     server.registerMethod("c4d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d4);
     
     server.registerMethod("c5dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c5distor);
     server.registerMethod("c5und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c5undistor);
     server.registerMethod("c5d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d5);
     
     
     server.registerMethod("c6dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c6distor);
     server.registerMethod("c6und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c6undistor);
     server.registerMethod("c6d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d6);
     
     server.registerMethod("c7dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c7distor);
     server.registerMethod("c7und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c7undistor);
     server.registerMethod("c7d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d7);
     
     server.registerMethod("c8dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c8distor);
     server.registerMethod("c8und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c8undistor);
     server.registerMethod("c8d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d8);
     
     server.registerMethod("c9dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c9distor);
     server.registerMethod("c9und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c9undistor);
     server.registerMethod("c9d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d9);
     
     server.registerMethod("c10dist",
                           "distortion channel",
                           this,
-                          &ofApp::c1distor);
+                          &ofApp::c10distor);
     server.registerMethod("c10und",
                           "distortion channel",
                           this,
-                          &ofApp::c1undistor);
+                          &ofApp::c10undistor);
     server.registerMethod("c10d",
                           "Returns distortion state.",
                           this,
-                          &ofApp::d1);
+                          &ofApp::d10);
     
     server.registerMethod("setEq",
                           "Sets text from the user.",
@@ -643,27 +643,29 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     string cad = args.params.asString();
     vector<string> splitItems = ofSplitString(cad, "_");
     
-    for (std::vector<string>::iterator it = splitItems.begin(); it != splitItems.end(); ++it)
-        ofLogVerbose("setEq") << ' ' << *it;
-    //ofLogVerbose("setEq_split") << splitItems;
-    /*
-    if (splitItems.size() == 5) {
-        bandParam[splitItems[0]][0] = splitItems[1];
-        bandParam[splitItems[0]][1] = splitItems[2];
-        bandParam[splitItems[0]][2] = splitItems[3];
-        
-        byPass[splitItems[0]] = splitItems[4];
-        
-        if (byPass[splitItems[0]]){
-            calcEQ(splitItems[1],
-                   splitItems[2],
-                   splitItems[3],
-                   splitItems[0]);
-        }
-        else{
-            disableEQBand(splitItems[0]);
-        }
-    }*/
+    int buf[5];
+    
+    for (iterador = splitItems.begin(); iterador != 5; iterador++) {
+        ofLogVerbose("setEq") <<  *iterador;
+        buf[i] = *iterador;
+    }
+
+    bandParam[buf[0]][0] = buf[1];
+    bandParam[buf[0]][1] = buf[2];
+    bandParam[buf[0]][2] = buf[3];
+    
+    byPass[buf[0]] = buf[4];
+    
+    if (byPass[buf[0]]){
+        calcEQ(buf[1],
+               buf[2],
+               buf[3],
+               buf[0]);
+    }
+    else{
+        disableEQBand(splitItems[0]);
+    }
+    
 }
 /*
 void ofApp:getVol(ofx::JSONRPC::MethodArgs& args){
@@ -883,84 +885,85 @@ void ofApp::c10vol(ofx::JSONRPC::MethodArgs& args){
 
 void ofApp::c1distor(){
     writeDSP(bus, distor_addr[0],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c1undistor(){
     writeDSP(bus, distor_addr[0],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c2distor(){
     writeDSP(bus, distor_addr[1],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c2undistor(){
     writeDSP(bus, distor_addr[1],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c3distor(){
     writeDSP(bus, distor_addr[2],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c3undistor(){
     writeDSP(bus, distor_addr[2],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c4distor(){
     writeDSP(bus, distor_addr[3],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c4undistor(){
     writeDSP(bus, distor_addr[3],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c5distor(){
     writeDSP(bus, distor_addr[4],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c5undistor(){
     writeDSP(bus, distor_addr[4],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c6distor(){
     writeDSP(bus, distor_addr[5],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c6undistor(){
     writeDSP(bus, distor_addr[5],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c7distor(){
     writeDSP(bus, distor_addr[6],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c7undistor(){
     writeDSP(bus, distor_addr[6],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c8distor(){
     writeDSP(bus, distor_addr[7],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c8undistor(){
     writeDSP(bus, distor_addr[7],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c9distor(){
     writeDSP(bus, distor_addr[8],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c9undistor(){
     writeDSP(bus, distor_addr[8],off);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c10distor(){
     writeDSP(bus, distor_addr[9],on_dist);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c10undistor(){
     writeDSP(bus, distor_addr[9],off);
-    d1b = 0;
+    d1b = 1;
 }
+
 void ofApp::d1(ofx::JSONRPC::MethodArgs& args){args.result = d1b;}
 void ofApp::d2(ofx::JSONRPC::MethodArgs& args){args.result = d2b;}
 void ofApp::d3(ofx::JSONRPC::MethodArgs& args){args.result = d3b;}
