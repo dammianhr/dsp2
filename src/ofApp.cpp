@@ -662,8 +662,8 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
         }
         else{
             disableEQBand(splitItems[0]);
-        }*/
-    }
+        }
+    }*/
 }
 /*
 void ofApp:getVol(ofx::JSONRPC::MethodArgs& args){
