@@ -697,6 +697,7 @@ void ofApp::getVol(ofx::JSONRPC::MethodArgs& args){
     args.result = vIndex*(-3);
     //args.result = vIndex;
     //ofLogVerbose("getVol") << vIndex;
+    
 }
 
 void ofApp::c1unmute(){
