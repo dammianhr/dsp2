@@ -110,6 +110,9 @@ public:
     void c9vol(ofx::JSONRPC::MethodArgs& args);
     void c10vol(ofx::JSONRPC::MethodArgs& args);
     
+    void setVol();
+    
+    //get channel input volumes
     void getVol(ofx::JSONRPC::MethodArgs& args);
     
     
