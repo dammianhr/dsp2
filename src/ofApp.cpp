@@ -633,9 +633,13 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     calcEQ(ofSplitString(args.params.asString, "_").[1],
            ofSplitString(args.params.asString, "_").[2],
            ofSplitString(args.params.asString, "_").[3],
-           ofSplitString(args.params.asString, "_").[0])
+           ofSplitString(args.params.asString, "_").[0]);
 }
-
+/*
+void ofApp:getVol(ofx::JSONRPC::MethodArgs& args){
+    args.params.asString()
+}
+*/
 void ofApp::setUserText(const std::string& text){
     std::unique_lock<std::mutex> lock(mutex);
     userText = text;
