@@ -36,7 +36,7 @@ public:
         bus->readBlock(intAddr, 4, data);
         return data;
     }
-        
+    //control master volume
     void vol1(){ vIndex = 0; writeDSP(bus, vol,volumes[vIndex]);}
     void vol2(){ vIndex = 1; writeDSP(bus, vol,volumes[vIndex]);}
     void vol3(){ vIndex = 2; writeDSP(bus, vol,volumes[vIndex]);}
@@ -46,8 +46,6 @@ public:
     void vol7(){ vIndex = 6; writeDSP(bus, vol,volumes[vIndex]);}
     void vol8(){ vIndex = 7; writeDSP(bus, vol,volumes[vIndex]);}
     void vol9(){ vIndex = 8; writeDSP(bus, vol,volumes[vIndex]);}
-    
-    void getVol(ofx::JSONRPC::MethodArgs& args);
 
     // Register a no-argument notification method.
     void c1mute();
@@ -99,7 +97,8 @@ public:
     void c10unmute();
     void c10(ofx::JSONRPC::MethodArgs& args);
     int c10b;
-
+    
+    //control master volume
     void c1vol(ofx::JSONRPC::MethodArgs& args);
     void c2vol(ofx::JSONRPC::MethodArgs& args);
     void c3vol(ofx::JSONRPC::MethodArgs& args);
@@ -111,6 +110,10 @@ public:
     void c9vol(ofx::JSONRPC::MethodArgs& args);
     void c10vol(ofx::JSONRPC::MethodArgs& args);
     
+    void getVol(ofx::JSONRPC::MethodArgs& args);
+    
+    
+    //distortions
     void c1distor();
     void c2distor();
     void c3distor();
