@@ -62,7 +62,7 @@ function initializeButtons() {
         console.log("Distortion");
         var $this = $(this);
         var $thisId = $this.parent().attr('id')
-        JSONRPCClient.notify('c'+$thisId+'dis');
+        JSONRPCClient.notify($thisId+'dis');
         getDistortionStatus($thisId);
     });
 
@@ -72,7 +72,7 @@ function initializeButtons() {
         console.log("UnDisturtion");
         var $this = $(this);
         var $thisId = $this.parent().attr('id')
-        JSONRPCClient.notify('c'+$thisId+'und');
+        JSONRPCClient.notify($thisId+'und');
         getDistortionStatus($thisId);
     });
 
@@ -202,7 +202,7 @@ function getDistortionStatus(channel){
     var _channel = channel;
     var $this = $(this);
 
-    JSONRPCClient.call('c'+channel+'d',
+    JSONRPCClient.call(channel+'d',
         null,
         function(result) {
             if(result == 1)
