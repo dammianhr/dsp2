@@ -647,7 +647,7 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     int i = 0;
     vector<string>::iterator iterador;
     
-    for (iterador = splitItems.begin(); iterador != 5; iterador++) {
+    for (iterador = splitItems.begin(); iterador != splitItems.begin()+4; iterador++) {
         ofLogVerbose("setEq") <<  *iterador;
         buf[i] = ofToInt(*iterador);
         i++;
@@ -666,7 +666,7 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
                buf[0]);
     }
     else{
-        disableEQBand(splitItems[0]);
+        disableEQBand(buff[0]);
     }
     
 }
