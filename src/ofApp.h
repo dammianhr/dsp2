@@ -173,6 +173,7 @@ public:
     //float boost = -15;
     
     float bandParam[7][3];
+    int byPass[7];
     
     double ax;
     double omega;
@@ -203,10 +204,15 @@ public:
         return buff;
     }
     
+    void disableEQBand(int band){
+        writeDSP(bus, paramData[band][0],on);
+        writeDSP(bus, paramData[band][1],off);
+        writeDSP(bus, paramData[band][2],off);
+        writeDSP(bus, paramData[band][3],off);
+        writeDSP(bus, paramData[band][4],off);
+    }
+    
     void calcEQ(float frec, float q, float boost, int band){
-        bandParam[band][0] = frec;
-        bandParam[band][1] = q;
-        bandParam[band][2] = boost;
         
         ax = pow(10,(boost/40));
         omega = 2*PI*frec/fs;

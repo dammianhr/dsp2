@@ -196,8 +196,20 @@ void ofApp::setup(){
     
     vIndex = XML.getValue("SAVES:VOL",0);
     for (int i = 0; i<7; i++) {
-        if (XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0)) {
-            //XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0)
+        if (!XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0)) {
+
+        }
+        else{
+            byPass[i] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP",0)
+            
+            bandParam[i][0] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":FR",0);
+            bandParam[i][1] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":Q",0);
+            bandParam[i][2] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BS",0);
+            
+            calcEQ(calcEQ(bandParam[i][0],
+                          bandParam[i][1],
+                          bandParam[i][2],
+                          i);
         }
     }
     
@@ -628,8 +640,13 @@ void ofApp::setup(){
 void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     setUserText(args.params.asString());
     ofLogVerbose("setEq") << args.params.asString();
+    string cad = args.params.asString();
+    vector<string> splitItems = ofSplitString(cad, "_");
     
-    vector<string> splitItems = ofSplitString(args.params.asString, "_");
+    bandParam[splitItems.[0]][0] = splitItems.[1];
+    bandParam[splitItems.[0]][1] = splitItems.[2];
+    bandParam[splitItems.[0]][2] = splitItems.[3];
+    
     calcEQ(splitItems.[1],
            splitItems.[2],
            splitItems.[3],
