@@ -26,6 +26,13 @@ function initializeButtons() {
 
     //Chanel MuteUnmute bind
 
+    $('body').on('change', '#ex1',function(e) {
+        e.preventDefault();
+        console.log("Change the general volume to:", $('#ex1').val());
+        JSONRPCClient.notify('vol'+$('#ex1').val()); 
+
+    });
+
     $('body').on('click', '.interactor.active',function(e) {
         e.preventDefault();
         console.log("mute");
@@ -84,19 +91,20 @@ $(document).ready(function() {
 
     initializeButtons();
 
-    
- JSONRPCClient.call('getVol',
+    getGeneralVolume();
+
+
+});
+
+
+function getGeneralVolume()
+{
+
+     JSONRPCClient.call('getVol',
         null,
         function(result) {
                 $('#ex1').val(result);
-                var generalVolumen = $('#ex1').slider({
-                    /*formatter: function(value) {
-                        return value;
-                    },
-                    step: 3,
-                    tooltip: 'always'
-*/
-                }).on('slide', volumeChange);
+                
 
 
         },
@@ -106,7 +114,7 @@ $(document).ready(function() {
         });
 
 
-});
+}
 
 function getStatus(channel){
     var _channel = channel;
@@ -187,12 +195,3 @@ $('.chanel').each(function( index ) {
 
 
 });
-
-
-
-var volumeChange = function() {
-    console.log('vol'+generalVolumen.val()); 
-   JSONRPCClient.notify('vol'+generalVolumen.val()); 
-};
-
-
