@@ -642,25 +642,28 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     ofLogVerbose("setEq") << args.params.asString();
     string cad = args.params.asString();
     vector<string> splitItems = ofSplitString(cad, "_");
-    //ofLogVerbose("setEq_split") << splitItems;
     
+    for (std::vector<string>::iterator it = splitItems.begin(); it != splitItems.end(); ++it)
+        ofLogVerbose("setEq") << ' ' << *it;
+    //ofLogVerbose("setEq_split") << splitItems;
+    /*
     if (splitItems.size() == 5) {
-        bandParam[splitItems.[0]][0] = splitItems.[1];
-        bandParam[splitItems.[0]][1] = splitItems.[2];
-        bandParam[splitItems.[0]][2] = splitItems.[3];
+        bandParam[splitItems[0]][0] = splitItems[1];
+        bandParam[splitItems[0]][1] = splitItems[2];
+        bandParam[splitItems[0]][2] = splitItems[3];
         
-        byPass[splitItems.[0]] = splitItems.[4];
+        byPass[splitItems[0]] = splitItems[4];
         
-        if (byPass[splitItems.[0]]){
-            calcEQ(splitItems.[1],
-                   splitItems.[2],
-                   splitItems.[3],
-                   splitItems.[0]);
+        if (byPass[splitItems[0]]){
+            calcEQ(splitItems[1],
+                   splitItems[2],
+                   splitItems[3],
+                   splitItems[0]);
         }
         else{
-            disableEQBand(splitItems.[0]);
+            disableEQBand(splitItems[0]);
         }
-    }
+    }*/
 }
 /*
 void ofApp:getVol(ofx::JSONRPC::MethodArgs& args){
