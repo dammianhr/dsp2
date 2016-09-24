@@ -695,7 +695,7 @@ void ofApp::exit(){
 
 void ofApp::getVol(ofx::JSONRPC::MethodArgs& args){
     args.result = vIndex*(-3);
-    args.result = vIndex;
+    //args.result = vIndex;
 }
 
 void ofApp::c1unmute(){
@@ -822,7 +822,7 @@ void ofApp::c10(ofx::JSONRPC::MethodArgs& args){
 void ofApp::c1vol(ofx::JSONRPC::MethodArgs& args){
     //args.result = HEX_to_DBL(readDSP(bus, pick_addr[0]));
     args.result = 25;
-    ofLogVerbose("c1vol") << args.result.asString();
+    //ofLogVerbose("c1vol") << args.result.asString();
 }
 void ofApp::c2vol(ofx::JSONRPC::MethodArgs& args){
     args.result = HEX_to_DBL(readDSP(bus, pick_addr[1]));
