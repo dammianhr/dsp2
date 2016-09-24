@@ -98,7 +98,7 @@ public:
     void c10(ofx::JSONRPC::MethodArgs& args);
     int c10b;
     
-    //control master volume
+    //get channel input volumes
     void c1vol(ofx::JSONRPC::MethodArgs& args);
     void c2vol(ofx::JSONRPC::MethodArgs& args);
     void c3vol(ofx::JSONRPC::MethodArgs& args);
@@ -110,11 +110,10 @@ public:
     void c9vol(ofx::JSONRPC::MethodArgs& args);
     void c10vol(ofx::JSONRPC::MethodArgs& args);
     
-    void setVol();
+    //void setVol();
     
-    //get channel input volumes
+    //get master volume
     void getVol(ofx::JSONRPC::MethodArgs& args);
-    
     
     //distortions
     void c1distor();
