@@ -75,6 +75,33 @@ function initializeButtons() {
     });
 
 
+    //Config input bind
+
+
+        $('body').on('focusout','.eqcontrol', function(e) {
+            e.preventDefault();
+
+            var $this = $(this);
+            var $thisBand = $this.attr('banda');
+
+            console.log($thisBand+'_'+$('input.freq[banda='+$thisBand+']').val()+'_'+$('input.qfactor[banda='+$thisBand+']').val()+'_'+$('input.boost[banda='+$thisBand+']').val());
+
+            JSONRPCClient.call('setEq',
+            $thisBand+'_'+$('input.freq[banda='+$thisBand+']').val()+'_'+$('input.qfactor[banda='+$thisBand+']').val()+'_'+$('input.boost[banda='+$thisBand+']').val(),
+            function(result) {
+                    console.log(result);
+            },
+            function(error) {
+                alert('ERROR; '+ error);
+            });
+
+
+                getStatus($thisChanel);
+        });
+
+
+
+
 
 }
 
