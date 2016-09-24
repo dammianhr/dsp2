@@ -940,3 +940,13 @@ void ofApp::c10undistor(){
     writeDSP(bus, distor_addr[9],off);
     d1b = 0;
 }
+void ofApp::d1(ofx::JSONRPC::MethodArgs& args){args.result = d1b;}
+void ofApp::d2(ofx::JSONRPC::MethodArgs& args){args.result = d2b;}
+void ofApp::d3(ofx::JSONRPC::MethodArgs& args){args.result = d3b;}
+void ofApp::d4(ofx::JSONRPC::MethodArgs& args){args.result = d4b;}
+void ofApp::d5(ofx::JSONRPC::MethodArgs& args){args.result = d5b;}
+void ofApp::d6(ofx::JSONRPC::MethodArgs& args){args.result = d6b;}
+void ofApp::d7(ofx::JSONRPC::MethodArgs& args){args.result = d7b;}
+void ofApp::d8(ofx::JSONRPC::MethodArgs& args){args.result = d8b;}
+void ofApp::d9(ofx::JSONRPC::MethodArgs& args){args.result = d9b;}
+void ofApp::d10(ofx::JSONRPC::MethodArgs& args){args.result = d10b;}
