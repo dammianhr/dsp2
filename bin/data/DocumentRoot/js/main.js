@@ -90,12 +90,12 @@ $(document).ready(function() {
         function(result) {
                 $('#ex1').val(result);
                 var generalVolumen = $('#ex1').slider({
-                    formatter: function(value) {
+                    /*formatter: function(value) {
                         return value;
                     },
                     step: 3,
                     tooltip: 'always'
-
+*/
                 }).on('slide', volumeChange);
 
 
