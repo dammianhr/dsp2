@@ -67,6 +67,40 @@ a.interactor.active:hover {
 a.interactor.active:active {
     background-position: -176px -481px;
 }
+
+
+
+
+/* Distortion button */
+
+
+a.distortion {
+    background-image: url('../img/buttons.png');
+    width: 125px;
+    height: 73px;
+    display: block;
+    margin: 0 auto;
+}
+
+
+a.distortion.inactive {
+    background-position: -176px -683px;
+}
+
+a.distortion.active {
+    background-position: -23px -683px;
+}
+
+
+
+
+
+
+
+
+
+
+
 /*
  * http://stackoverflow.com/questions/11223615/how-to-use-font-awesome-for-checkboxes-etc
  */

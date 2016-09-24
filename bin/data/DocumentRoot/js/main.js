@@ -24,10 +24,6 @@ function onWebSocketError() {
 
 function initializeButtons() {
 
-
-
-
-
     //Chanel MuteUnmute bind
 
     $('body').on('click', '.interactor.active',function(e) {
@@ -47,6 +43,28 @@ function initializeButtons() {
         var $thisId = $this.parent().attr('id')
         JSONRPCClient.notify($thisId+'unmute');
         getStatus($thisId);
+    });
+
+
+    //Chanel Distortion bind
+
+    $('body').on('click', '.distortion.active',function(e) {
+        e.preventDefault();
+        console.log("mute");
+        var $this = $(this);
+        var $thisId = $this.parent().attr('id')
+        JSONRPCClient.notify($thisId+'dis');
+        getDistortionStatus($thisId);
+    });
+
+
+    $('body').on('click','.distortion.inactive', function(e) {
+        e.preventDefault();
+        console.log("unMute");
+        var $this = $(this);
+        var $thisId = $this.parent().attr('id')
+        JSONRPCClient.notify($thisId+'und');
+        getDistortionStatus($thisId);
     });
 
 
@@ -73,6 +91,29 @@ function getStatus(channel){
     var $this = $(this);
 
     JSONRPCClient.call(channel,
+        null,
+        function(result) {
+            if(result == 1)
+            {
+                $('#'+_channel+' .interactor').removeClass('active inactive');
+                $('#'+_channel+' .interactor').addClass('active');
+            }
+            else
+            {
+                $('#'+_channel+' .interactor').removeClass('active inactive');
+                $('#'+_channel+' .interactor').addClass('inactive');
+            }
+        },
+        function(error) {
+            alert('ERROR; '+ error);
+        });
+}
+
+function getDistortionStatus(channel){
+    var _channel = channel;
+    var $this = $(this);
+
+    JSONRPCClient.call(channel+'d',
         null,
         function(result) {
             if(result == 1)
