@@ -206,10 +206,10 @@ void ofApp::setup(){
             bandParam[i][1] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":Q",0);
             bandParam[i][2] = XML.getValue("SAVES:EQ:BD"+ ofToString(i+1) +":BS",0);
             
-            calcEQ(calcEQ(bandParam[i][0],
-                          bandParam[i][1],
-                          bandParam[i][2],
-                          i);
+            calcEQ(bandParam[i][0],
+                   bandParam[i][1],
+                   bandParam[i][2],
+                   i);
         }
     }
     
