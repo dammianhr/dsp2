@@ -498,133 +498,133 @@ void ofApp::setup(){
                           this,
                           &ofApp::c10vol);
     //distortion /-------------------------------------
-    server.registerMethod("c1distor",
+    server.registerMethod("c1dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c1undistor",
+    server.registerMethod("c1und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d1",
+    server.registerMethod("c1d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("c2distor",
+    server.registerMethod("c2dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c2undistor",
+    server.registerMethod("c2und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d2",
+    server.registerMethod("c2d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("c3distor",
+    server.registerMethod("c3dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c3undistor",
+    server.registerMethod("c3und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d3",
+    server.registerMethod("c3d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("c4distor",
+    server.registerMethod("c4dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c4undistor",
+    server.registerMethod("c4und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d4",
+    server.registerMethod("c4d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("c5distor",
+    server.registerMethod("c5dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c5undistor",
+    server.registerMethod("c5und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d5",
+    server.registerMethod("c5d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
     
-    server.registerMethod("c6distor",
+    server.registerMethod("c6dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c6undistor",
+    server.registerMethod("c6und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d6",
+    server.registerMethod("c6d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("c7distor",
+    server.registerMethod("c7dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c7undistor",
+    server.registerMethod("c7und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d7",
+    server.registerMethod("c7d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("c8distor",
+    server.registerMethod("c8dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c8undistor",
+    server.registerMethod("c8und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d8",
+    server.registerMethod("c8d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("c9distor",
+    server.registerMethod("c9dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c9undistor",
+    server.registerMethod("c9und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d9",
+    server.registerMethod("c9d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
     
-    server.registerMethod("c10distor",
+    server.registerMethod("c10dist",
                           "distortion channel",
                           this,
                           &ofApp::c1distor);
-    server.registerMethod("c10undistor",
+    server.registerMethod("c10und",
                           "distortion channel",
                           this,
                           &ofApp::c1undistor);
-    server.registerMethod("d10",
+    server.registerMethod("c10d",
                           "Returns distortion state.",
                           this,
                           &ofApp::d1);
