@@ -666,7 +666,7 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
                buf[0]);
     }
     else{
-        disableEQBand(buff[0]);
+        disableEQBand(buf[0]);
     }
     
 }
