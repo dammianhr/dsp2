@@ -200,11 +200,14 @@ public:
         buff[1] = (c >> 16);
         buff[2] = (c >> 8);
         buff[3] = (uint8_t)(c);
-        
         return buff;
     }
     
     void calcEQ(float frec, float q, float boost, int band){
+        bandParam[band][0] = frec;
+        bandParam[band][1] = q;
+        bandParam[band][2] = boost;
+        
         ax = pow(10,(boost/40));
         omega = 2*PI*frec/fs;
         seno = sin(omega);

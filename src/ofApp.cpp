@@ -630,10 +630,10 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     ofLogVerbose("ofApp::setEq") << args.params.asString();
     
     
-    calcEQ(ofSplitString(args.params.asString, "_")[1],
-           ofSplitString(args.params.asString, "_")[2],
-           ofSplitString(args.params.asString, "_")[3],
-           ofSplitString(args.params.asString, "_")[0])
+    calcEQ(ofSplitString(args.params.asString, "_").[1],
+           ofSplitString(args.params.asString, "_").[2],
+           ofSplitString(args.params.asString, "_").[3],
+           ofSplitString(args.params.asString, "_").[0])
 }
 
 void ofApp::setUserText(const std::string& text){
