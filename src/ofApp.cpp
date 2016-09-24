@@ -697,6 +697,13 @@ void ofApp::exit(){
     XML.setValue("SAVES:D10", c10b);
     
     XML.setValue("SAVES:VOL", vIndex);
+    
+    for (int i = 0; i<7; i++) {
+        XML.setValue("SAVES:EQ:BD"+ ofToString(i+1) +":BP", byPass[i]);
+        XML.setValue("SAVES:EQ:BD"+ ofToString(i+1) +":FR", bandParam[i][0]);
+        XML.setValue("SAVES:EQ:BD"+ ofToString(i+1) +":Q", bandParam[i][1]);
+        XML.setValue("SAVES:EQ:BD"+ ofToString(i+1) +":BS", bandParam[i][2]);
+    }
 
     XML.saveFile("saves.xml");
 }
