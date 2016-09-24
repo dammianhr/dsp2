@@ -627,13 +627,13 @@ void ofApp::setup(){
 
 void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     setUserText(args.params.asString());
-    ofLogVerbose("ofApp::setEq") << args.params.asString();
+    ofLogVerbose("setEq") << args.params.asString();
     
-    
-    calcEQ(ofSplitString(args.params.asString, "_").[1],
-           ofSplitString(args.params.asString, "_").[2],
-           ofSplitString(args.params.asString, "_").[3],
-           ofSplitString(args.params.asString, "_").[0]);
+    vector<string> splitItems = ofSplitString(args.params.asString, "_");
+    calcEQ(splitItems.[1],
+           splitItems.[2],
+           splitItems.[3],
+           splitItems.[0]);
 }
 /*
 void ofApp:getVol(ofx::JSONRPC::MethodArgs& args){
