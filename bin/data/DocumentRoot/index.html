@@ -36,7 +36,7 @@
         <div id="card"> 
             <div class="front"> 
                 <div class="row">
-                    <a class="btn" onclick="$('#card').flip(true)"> <i class=""></i> Config</a>
+                    <a class="btn btn-primary" id="openConfig"> <i class=""></i>Config EQ</a>
                 </div>
                 <div class="row ">
                     <div class="col-xs-4 col-md-3 col-lg-2">
@@ -133,8 +133,9 @@
             </div> 
             <div class="back">
                 <div class="row">
-                    <a class="btn btn-basic" onclick="$('#card').flip(false)"> <i class=""></i> Config</a>
-
+                    <a class="btn btn-primary" id="closeConfig"> <i class=""></i> Config close</a>
+                </div>
+                <div class="row">
                     <table style="color: #FFF;">
                         <tr>
                             <td>
@@ -164,6 +165,7 @@
                             <td><input type="text" banda="2" name="freq" class="eqcontrol freq" value="0"  /></td>
                             <td><input type="text" banda="2" name="qfactor" class="eqcontrol qfactor" value="0"/></td>
                             <td><input type="text" banda="2" name="boost" class="eqcontrol boost" value="0" /></td>
+                            <td><input type="checkbox" banda="2" name="bypass" class="eqcontrol bypass"></td>
                         </tr>
                         <tr>
                             <td>
@@ -172,6 +174,7 @@
                             <td><input type="text" banda="3" name="freq" class="eqcontrol freq" value="0"  /></td>
                             <td><input type="text" banda="3" name="qfactor" class="eqcontrol qfactor" value="0"/></td>
                             <td><input type="text" banda="3" name="boost" class="eqcontrol boost" value="0" /></td>
+                            <td><input type="checkbox" banda="3" name="bypass" class="eqcontrol bypass"></td>
                         </tr>
                         <tr>
                             <td>
@@ -180,6 +183,7 @@
                             <td><input type="text" banda="4" name="freq" class="eqcontrol freq" value="0"  /></td>
                             <td><input type="text" banda="4" name="qfactor" class="eqcontrol qfactor" value="0"/></td>
                             <td><input type="text" banda="4" name="boost" class="eqcontrol boost" value="0" /></td>
+                            <td><input type="checkbox" banda="4" name="bypass" class="eqcontrol bypass"></td>
                         </tr>
                         <tr>
                             <td>
@@ -188,6 +192,7 @@
                             <td><input type="text" banda="5" name="freq" class="eqcontrol freq" value="0"  /></td>
                             <td><input type="text" banda="5" name="qfactor" class="eqcontrol qfactor" value="0"/></td>
                             <td><input type="text" banda="5" name="boost" class="eqcontrol boost" value="0" /></td>
+                            <td><input type="checkbox" banda="5" name="bypass" class="eqcontrol bypass"></td>
                         </tr>
                         <tr>
                             <td>
@@ -196,6 +201,7 @@
                             <td><input type="text" banda="6" name="freq" class="eqcontrol freq" value="0"  /></td>
                             <td><input type="text" banda="6" name="qfactor" class="eqcontrol qfactor" value="0"/></td>
                             <td><input type="text" banda="6" name="boost" class="eqcontrol boost" value="0" /></td>
+                            <td><input type="checkbox" banda="6" name="bypass" class="eqcontrol bypass"></td>
                         </tr>
                         <tr>
                             <td>
@@ -204,6 +210,7 @@
                             <td><input type="text" banda="7" name="freq" class="eqcontrol freq" value="0"  /></td>
                             <td><input type="text" banda="7" name="qfactor" class="eqcontrol qfactor" value="0"/></td>
                             <td><input type="text" banda="7" name="boost" class="eqcontrol boost" value="0" /></td>
+                            <td><input type="checkbox" banda="7" name="bypass" class="eqcontrol bypass"></td>
                         </tr>
                     </table>
 

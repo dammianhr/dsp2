@@ -1,5 +1,7 @@
 var JSONRPCClient; ///< The core JSONRPC WebSocket client.
 
+var configIsOpen = 'false';
+
 function addError(error) {
     console.log(error);
 }
@@ -75,19 +77,51 @@ function initializeButtons() {
     });
 
 
+    // Confing page manager
+
+    $('body').on('click','#openConfig', function(e) {
+        e.preventDefault();
+        console.log("Open Config");
+
+        $('.front').fadeOut();
+        $('.back').fadeIn();
+        
+        configIsOpen = true;
+    });
+    $('body').on('click','#closeConfig', function(e) {
+        e.preventDefault();
+        console.log("Close Config");
+
+        $('.front').fadeIn();
+        $('.back').fadeOut();
+        
+        configIsOpen = false;
+    });
+
+
     //Config input bind
 
 
-        $('body').on('focusout','.eqcontrol', function(e) {
-            e.preventDefault();
+        $('body').on('focusout click','.eqcontrol', function(e) {
+           // e.preventDefault();
 
             var $this = $(this);
             var $thisBand = $this.attr('banda');
+            var $thisBypass = 0;
 
-            console.log($thisBand+'_'+$('input.freq[banda='+$thisBand+']').val()+'_'+$('input.qfactor[banda='+$thisBand+']').val()+'_'+$('input.boost[banda='+$thisBand+']').val());
+            if($('input.bypass[banda='+$thisBand+']').is(':checked'))
+            {
+                $thisBypass = 1;
+            }
+            else
+            {
+                $thisBypass = 0;
+            }
+
+            console.log($thisBand+'_'+$('input.freq[banda='+$thisBand+']').val()+'_'+$('input.qfactor[banda='+$thisBand+']').val()+'_'+$('input.boost[banda='+$thisBand+']').val()+'_'+$thisBypass);
 
             JSONRPCClient.call('setEq',
-            $thisBand+'_'+$('input.freq[banda='+$thisBand+']').val()+'_'+$('input.qfactor[banda='+$thisBand+']').val()+'_'+$('input.boost[banda='+$thisBand+']').val(),
+            $thisBand+'_'+$('input.freq[banda='+$thisBand+']').val()+'_'+$('input.qfactor[banda='+$thisBand+']').val()+'_'+$('input.boost[banda='+$thisBand+']').val()+'_'+$thisBypass ,
             function(result) {
                     console.log(result);
             },
@@ -95,8 +129,6 @@ function initializeButtons() {
                 alert('ERROR; '+ error);
             });
 
-
-                getStatus($thisChanel);
         });
 
 
@@ -213,7 +245,7 @@ $('.chanel').each(function( index ) {
 
 
     setInterval(function(){
-        if($this.find('.interactor').hasClass('active'))
+        if($this.find('.interactor').hasClass('active') && !configIsOpen)
         {
             getVolStatus($thisId);
         }
