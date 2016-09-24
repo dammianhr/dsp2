@@ -888,81 +888,81 @@ void ofApp::c10vol(ofx::JSONRPC::MethodArgs& args){
 
 void ofApp::c1distor(){
     writeDSP(bus, distor_addr[0],on_dist);
-    d1b = 0;
-    ofLogVerbose("c1distor") << d1b;
+    d1b = 1;
+    //ofLogVerbose("c1distor") << d1b;
 }
 void ofApp::c1undistor(){
     writeDSP(bus, distor_addr[0],off);
-    d1b = 1;
-    ofLogVerbose("c1undistor") << d1b;
+    d1b = 0;
+    //ofLogVerbose("c1undistor") << d1b;
 }
 void ofApp::c2distor(){
     writeDSP(bus, distor_addr[1],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c2undistor(){
     writeDSP(bus, distor_addr[1],off);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c3distor(){
     writeDSP(bus, distor_addr[2],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c3undistor(){
     writeDSP(bus, distor_addr[2],off);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c4distor(){
     writeDSP(bus, distor_addr[3],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c4undistor(){
     writeDSP(bus, distor_addr[3],off);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c5distor(){
     writeDSP(bus, distor_addr[4],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c5undistor(){
     writeDSP(bus, distor_addr[4],off);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c6distor(){
     writeDSP(bus, distor_addr[5],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c6undistor(){
     writeDSP(bus, distor_addr[5],off);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c7distor(){
     writeDSP(bus, distor_addr[6],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c7undistor(){
     writeDSP(bus, distor_addr[6],off);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c8distor(){
     writeDSP(bus, distor_addr[7],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c8undistor(){
     writeDSP(bus, distor_addr[7],off);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c9distor(){
     writeDSP(bus, distor_addr[8],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c9undistor(){
     writeDSP(bus, distor_addr[8],off);
-    d1b = 1;
+    d1b = 0;
 }
 void ofApp::c10distor(){
     writeDSP(bus, distor_addr[9],on_dist);
-    d1b = 0;
+    d1b = 1;
 }
 void ofApp::c10undistor(){
     writeDSP(bus, distor_addr[9],off);
