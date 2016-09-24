@@ -160,6 +160,7 @@ $('.chanel').each(function( index ) {
         {
             getVolStatus($thisId);
         }
+        getStatus($thisId);
     },500)
 
 
