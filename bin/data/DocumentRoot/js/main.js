@@ -1,3 +1,13 @@
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        this.addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+})
+
+
 var JSONRPCClient; ///< The core JSONRPC WebSocket client.
 
 var configIsOpen = 'false';
@@ -59,7 +69,7 @@ function initializeButtons() {
 
     $('body').on('click', '.distortion.active',function(e) {
         e.preventDefault();
-        console.log("Distortion");
+        console.log("Distortion:", $thisId+'dis');
         var $this = $(this);
         var $thisId = $this.parent().attr('id')
         JSONRPCClient.notify($thisId+'dis');
@@ -69,7 +79,7 @@ function initializeButtons() {
 
     $('body').on('click','.distortion.inactive', function(e) {
         e.preventDefault();
-        console.log("UnDisturtion");
+        console.log("UnDisturtion:", $thisId+'und');
         var $this = $(this);
         var $thisId = $this.parent().attr('id')
         JSONRPCClient.notify($thisId+'und');
@@ -205,6 +215,8 @@ function getDistortionStatus(channel){
     JSONRPCClient.call(channel+'d',
         null,
         function(result) {
+            console.log("getDistortionStatus result:", result);
+
             if(result == 1)
             {
                 $('#'+_channel+' .distortion').removeClass('active inactive');
