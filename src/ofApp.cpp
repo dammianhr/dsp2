@@ -898,77 +898,77 @@ void ofApp::c1undistor(){
 }
 void ofApp::c2distor(){
     writeDSP(bus, distor_addr[1],on_dist);
-    d1b = 1;
-    ofLogVerbose("c1dist") << d1b;
+    d2b = 1;
+    //ofLogVerbose("c2dist") << d1b;
 }
 void ofApp::c2undistor(){
     writeDSP(bus, distor_addr[1],off);
-    d1b = 0;
-    ofLogVerbose("c1und") << d1b;
+    d2b = 0;
+    //ofLogVerbose("c2und") << d1b;
 }
 void ofApp::c3distor(){
     writeDSP(bus, distor_addr[2],on_dist);
-    d1b = 1;
+    d3b = 1;
 }
 void ofApp::c3undistor(){
     writeDSP(bus, distor_addr[2],off);
-    d1b = 0;
+    d3b = 0;
 }
 void ofApp::c4distor(){
     writeDSP(bus, distor_addr[3],on_dist);
-    d1b = 1;
+    d4b = 1;
 }
 void ofApp::c4undistor(){
     writeDSP(bus, distor_addr[3],off);
-    d1b = 0;
+    d4b = 0;
 }
 void ofApp::c5distor(){
     writeDSP(bus, distor_addr[4],on_dist);
-    d1b = 1;
+    d5b = 1;
 }
 void ofApp::c5undistor(){
     writeDSP(bus, distor_addr[4],off);
-    d1b = 0;
+    d5b = 0;
 }
 void ofApp::c6distor(){
     writeDSP(bus, distor_addr[5],on_dist);
-    d1b = 1;
+    d6b = 1;
 }
 void ofApp::c6undistor(){
     writeDSP(bus, distor_addr[5],off);
-    d1b = 0;
+    d6b = 0;
 }
 void ofApp::c7distor(){
     writeDSP(bus, distor_addr[6],on_dist);
-    d1b = 1;
+    d7b = 1;
 }
 void ofApp::c7undistor(){
     writeDSP(bus, distor_addr[6],off);
-    d1b = 0;
+    d7b = 0;
 }
 void ofApp::c8distor(){
     writeDSP(bus, distor_addr[7],on_dist);
-    d1b = 1;
+    d8b = 1;
 }
 void ofApp::c8undistor(){
     writeDSP(bus, distor_addr[7],off);
-    d1b = 0;
+    d8b = 0;
 }
 void ofApp::c9distor(){
     writeDSP(bus, distor_addr[8],on_dist);
-    d1b = 1;
+    d9b = 1;
 }
 void ofApp::c9undistor(){
     writeDSP(bus, distor_addr[8],off);
-    d1b = 0;
+    d9b = 0;
 }
 void ofApp::c10distor(){
     writeDSP(bus, distor_addr[9],on_dist);
-    d1b = 1;
+    d10b = 1;
 }
 void ofApp::c10undistor(){
     writeDSP(bus, distor_addr[9],off);
-    d1b = 0;
+    d10b = 0;
 }
 
 void ofApp::d1(ofx::JSONRPC::MethodArgs& args){args.result = d1b;}
