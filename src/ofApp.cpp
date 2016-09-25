@@ -647,8 +647,8 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     int i = 0;
     vector<string>::iterator iterador;
     
-    for (iterador = splitItems.begin(); iterador != splitItems.begin()+4; iterador++) {
-        buf[i] = ofToInt(*iterador);
+    for (iterador = splitItems.begin(); iterador != splitItems.begin()+5; iterador++) {
+        buf[i] = ofToFloat(*iterador);
         ofLogVerbose("setEq") <<  buf[i];
         i++;
     }
@@ -899,10 +899,12 @@ void ofApp::c1undistor(){
 void ofApp::c2distor(){
     writeDSP(bus, distor_addr[1],on_dist);
     d1b = 1;
+    ofLogVerbose("c1dist") << d1b;
 }
 void ofApp::c2undistor(){
     writeDSP(bus, distor_addr[1],off);
     d1b = 0;
+    ofLogVerbose("c1und") << d1b;
 }
 void ofApp::c3distor(){
     writeDSP(bus, distor_addr[2],on_dist);
@@ -966,7 +968,7 @@ void ofApp::c10distor(){
 }
 void ofApp::c10undistor(){
     writeDSP(bus, distor_addr[9],off);
-    d1b = 1;
+    d1b = 0;
 }
 
 void ofApp::d1(ofx::JSONRPC::MethodArgs& args){args.result = d1b;}
