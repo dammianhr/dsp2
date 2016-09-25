@@ -653,7 +653,7 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
         i++;
     }
     
-    int band = ofToInt(buf[0]);
+    int band = int(buf[0]);
 
     bandParam[band][0] = buf[1];
     bandParam[band][1] = buf[2];
@@ -661,7 +661,7 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     
     byPass[band] = buf[4];
     
-    if (byPass[band){
+    if (byPass[band]){
         calcEQ(buf[1],
                buf[2],
                buf[3],
