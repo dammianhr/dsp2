@@ -643,7 +643,7 @@ void ofApp::setEq(ofx::JSONRPC::MethodArgs& args){
     string cad = args.params.asString();
     vector<string> splitItems = ofSplitString(cad, "_");
     
-    int buf[5];
+    float buf[5];
     int i = 0;
     vector<string>::iterator iterador;
     
