@@ -9,19 +9,21 @@
 #include "ofApp.h"
 #include "I2Cdev.h"
 #include "DSP Completo HITRIX (con mux entrada)_IC_1_PARAM.h"
-#include "DSP Completo HITRIX (con mux entrada)_IC_1.h"
-
-extern void default_download_IC_1();
+#include "sigmadata.h"
 
 #define DSP_addr 0x3b
 
 void ofApp::setup(){
     ofSetLogLevel(OF_LOG_VERBOSE);
     
+    sigmaData *sigma;
+    sigma = new sigmaData( "NumBytes_IC_1.dat","TxBuffer_IC_1.dat","/dev/i2c-1");
+    sigma->cargarPrograma();
+
+    usleep(10000);
+    
     if(!XML.load("saves.xml"))
         ofLogError("xml file not loaded!");
-    
-    default_download_IC_1();
     
     bus = new I2Cdev("/dev/i2c-1");
     bus->addressSet(DSP_addr);
@@ -34,9 +36,8 @@ void ofApp::setup(){
     mute_addr[5] = MOD_CANAL_5_MUTENOSLEWALG8MUTE_ADDR;
     mute_addr[6] = MOD_CANAL_6_MUTENOSLEWALG9MUTE_ADDR;
     mute_addr[7] = MOD_CANAL_7_MUTENOSLEWALG10MUTE_ADDR;
-    
-    mute_addr[9] = MOD_CANAL_8_MUTENOSLEWALG2MUTE_ADDR;
-    mute_addr[8] = MOD_CANAL_9_MUTENOSLEWALG4MUTE_ADDR;
+    mute_addr[8] = MOD_CANAL_8_MUTENOSLEWALG2MUTE_ADDR;
+    mute_addr[9] = MOD_CANAL_9_MUTENOSLEWALG4MUTE_ADDR;
     
     distor_addr[0] = MOD_DISTORS_0_ISON_ADDR;
     distor_addr[1] = MOD_DISTORS_0_ISON_ADDR;
@@ -57,6 +58,8 @@ void ofApp::setup(){
     pick_addr[5] = MOD_READBACK_CANAL_5_READBACKALGSIGMA2006_ADDR;
     pick_addr[6] = MOD_READBACK_CANAL_6_READBACKALGSIGMA2007_ADDR;
     pick_addr[7] = MOD_READBACK_CANAL_7_READBACKALGSIGMA2008_ADDR;
+    pick_addr[8] = MOD_READBACK_CANAL_8_READBACKALGSIGMA2009_ADDR;
+    pick_addr[9] = MOD_READBACK_CANAL_9_READBACKALGSIGMA20010_ADDR;
     
     vol = MOD_VOLUMEN_GRAL_GAIN1940ALGNS1_ADDR;
     
