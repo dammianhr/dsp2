@@ -20,7 +20,7 @@ void ofApp::setup(){
     sigma = new sigmaData( "NumBytes_IC_1.dat","TxBuffer_IC_1.dat","/dev/i2c-1");
     sigma->cargarPrograma();
 
-    usleep(10000);
+    usleep(100000);
     
     if(!XML.load("saves.xml"))
         ofLogError("xml file not loaded!");
