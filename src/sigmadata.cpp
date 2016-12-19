@@ -28,7 +28,14 @@ int sigmaData::cantidadBytes(void)
     char datos[50];
     memset(datos,0,50);
     fileNumBytes.getline(datos,50,',');
-
+    
+#ifdef __DEBUG__
+    for(int i = 0; i< 25;i++)
+    {
+        printf("%d,",datos[i]);
+    }
+    printf("\n");
+#endif // __DEBUG__
     if(datos[0]!=0){
         return atoi (datos);
     }
@@ -75,6 +82,7 @@ unsigned int sigmaData::leerBuffer(unsigned int numBytes)
         index++;
     }
 #ifdef __DEBUG__
+    printf("leerBuffer()\n");
     for(int i = 0; i< numBytes;i++)
     {
         printf("%d,",rawBuffer[i]);
@@ -124,6 +132,7 @@ unsigned int sigmaData::leerPartBuffer(void)
     //}
 #ifdef __DEBUG__
     //for(int i = 0; i< numBytes;i++)
+    printf("leerPartBuffer()\n");
     for(int i = 0; i< index;i++)
     {
         printf("%d,",rawBuffer[i]);
@@ -135,6 +144,7 @@ unsigned int sigmaData::leerPartBuffer(void)
 
 void sigmaData::cargarPrograma(void)
 {
+    printf("downloading firmare ...");
     unsigned int bytes;
     unsigned int offset;
     unsigned int leido;
