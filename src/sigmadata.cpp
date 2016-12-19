@@ -144,7 +144,7 @@ unsigned int sigmaData::leerPartBuffer(void)
 
 void sigmaData::cargarPrograma(void)
 {
-    printf("downloading firmare ...");
+    printf("downloading firmare ...\n");
     unsigned int bytes;
     unsigned int offset;
     unsigned int leido;
