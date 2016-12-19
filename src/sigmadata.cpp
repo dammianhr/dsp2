@@ -166,7 +166,7 @@ void sigmaData::cargarPrograma(void)
             leerBuffer(2);
             offset = rawBuffer[0] * 0x100 + rawBuffer[1];
             bytes-=2;
-            //printf("bytes a leer: %d, direccion: %d\n",bytes,offset);
+            printf("bytes a leer: %d, direccion: %d\n",bytes,offset);
             while(bytes > 0)
             {
                 leido=leerPartBuffer();
